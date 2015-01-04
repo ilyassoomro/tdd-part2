@@ -15,17 +15,11 @@ import framework.WasRun;
 
 public class TestCaseTest {
 	
-	WasRun test;
+	
+	
 	
 	/**
-	 * Chapter 19. Set the Table
-	 */
-	@Before public void setUp(){
-		this.test = new WasRun("testMethod");
-	}
-	
-	/**
-	 * Chapter 19. Set the Table (Test Case)
+	 * Chapter 20. Cleaning Up After
 	 * @throws NoSuchMethodException
 	 * @throws SecurityException
 	 * @throws IllegalAccessException
@@ -33,26 +27,11 @@ public class TestCaseTest {
 	 * @throws InvocationTargetException
 	 */
 	@Test
-	public void testRunning() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		assertFalse(test.wasRun);
-		this.test.run();
-		assertTrue(test.wasRun);
+	public void testTemplateMethod() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+		WasRun test = new WasRun("testMethod");
+		test.run();
+		assertTrue("setUp testMethod tearDown ".equals(test.log));
 	}
-	
-	/**
-	 * Chapter 19. Set the Table (Test Case)
-	 * @throws NoSuchMethodException
-	 * @throws SecurityException
-	 * @throws IllegalAccessException
-	 * @throws IllegalArgumentException
-	 * @throws InvocationTargetException
-	 */
-	@Test
-	public void testSetUp() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
-		this.test.run();
-		assertTrue(test.wasRun);
-	}
-	
 	
 	
 

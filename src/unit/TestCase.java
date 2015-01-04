@@ -14,10 +14,15 @@ public class TestCase {
 		
 	}
 	
+	public void tearDown(){
+		
+	}
+	
 	public void run() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		this.setUp();
 		Method method = this.getClass().getMethod(methodName);
 		method.invoke(this);
+		this.tearDown();
 		
 	}
 

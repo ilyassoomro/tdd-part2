@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 public class WasRun extends TestCase {
 
 	public boolean wasRun;
-	public boolean wasSetup;
+	public String log;
 	
 	
 	public WasRun(String methodName) {
@@ -15,11 +15,14 @@ public class WasRun extends TestCase {
 		//this.methodName = methodName;
 	}
 	public void testMethod() {
-		wasRun = true;
+		this.log = this.log + "testMethod ";
 	}
 	
 	public void setUp(){
-		wasRun = false;
-		wasSetup = true;
+		this.log = "setUp ";
+	}
+	
+	public void tearDown(){
+		this.log = this.log + "tearDown ";
 	}
 }
