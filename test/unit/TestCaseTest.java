@@ -49,6 +49,33 @@ public class TestCaseTest {
 		assertTrue("1 run, 0 failed".equals(result.summary()));
 	}
 	
+	/**
+	 * Chapter 22. Dealing with Failure (Test Case)
+	 */
+	@Test 
+	public void testFailedResultFormatting(){
+		TestResult result = new TestResult();
+		result.testStarted();
+		result.testFailed();
+		assertTrue("1 run, 1 failed".equals(result.summary()));
+	}
+	
+	/**
+	 * Chapter 21. Counting (Test Case)
+	 * @throws NoSuchMethodException
+	 * @throws SecurityException
+	 * @throws IllegalAccessException
+	 * @throws IllegalArgumentException
+	 * @throws InvocationTargetException
+	 */
+	@Test
+	public void testFailedResult() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+		WasRun test = new WasRun("testBrokenMethod");
+		TestResult result = test.run();
+		assertTrue("1 run, 1 failed".equals(result.summary()));
+	}
+	
+	
 	
 }
 
