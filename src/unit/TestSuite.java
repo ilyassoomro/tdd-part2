@@ -1,9 +1,8 @@
 package unit;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
-public class TestSuite {
+public class TestSuite implements Test {
 
 	private ArrayList<TestCase> tests;
 	
@@ -15,7 +14,7 @@ public class TestSuite {
 		tests.add(testCase);
 	}
 	
-	public void run(TestResult result) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+	public void run(TestResult result){
 		//TestResult result = new TestResult();
 		if(tests.size()>0){
 			for(TestCase testCase: tests){ 
@@ -24,8 +23,8 @@ public class TestSuite {
 		}
 		//return result;
 	}
-	
-	
-	
-	
+
+	public int countTestCases() {
+		return tests.size();
+	}
 }

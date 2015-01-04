@@ -1,9 +1,8 @@
 package unit;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class TestCase {
+public class TestCase implements Test {
 	public String methodName;
 
 	public TestCase(String methodName) {
@@ -18,7 +17,11 @@ public class TestCase {
 		
 	}
 	
-	public void run(TestResult result) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+	public int countTestCases(){
+		return 1;
+	}
+	
+	public void run(TestResult result) {
 		//TestResult result = new TestResult();
 		result.testStarted();
 		this.setUp();
