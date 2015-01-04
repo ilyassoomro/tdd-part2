@@ -18,8 +18,8 @@ public class TestCase {
 		
 	}
 	
-	public TestResult run() throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		TestResult result = new TestResult();
+	public void run(TestResult result) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		//TestResult result = new TestResult();
 		result.testStarted();
 		this.setUp();
 		try{
@@ -29,7 +29,7 @@ public class TestCase {
 			result.testFailed();
 		}
 		this.tearDown();
-		return result;
+		//return result;
 	}
 
 }
