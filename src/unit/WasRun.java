@@ -25,4 +25,8 @@ public class WasRun extends TestCase {
 	public void tearDown(){
 		this.log = this.log + "tearDown ";
 	}
+	
+	public void testBrokenMethod(){
+		
+	}
 }
